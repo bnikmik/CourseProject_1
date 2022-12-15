@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class EmployeeBook {
     private static Employee[] employees = new Employee[0];//Попробовал создать с пустым массивом сотрудников
 
@@ -15,10 +17,7 @@ public class EmployeeBook {
             if (employees[i].getId() == id) {
                 System.out.println("Уволен сотрудник" + employees[i].getFullName());
                 System.arraycopy(employees, i + 1, employees, i, employees.length - i - 1);
-                employees[employees.length - 1] = null;
-                Employee[] temp = employees.clone();
-                employees = new Employee[employees.length - 1];
-                System.arraycopy(temp, 0, employees, 0, temp.length - 1);
+                employees = Arrays.copyOf(employees, employees.length - 1);
                 break;
             }
         }
@@ -58,6 +57,7 @@ public class EmployeeBook {
                 size++;
             }
         }
+        Arrays.sort(departments);
         for (int department : departments) {  //Печатаю список отделов и их сотрудников
             System.out.println("Сотрудники из отдела " + department + ": ");
             for (Employee employee : employees) {

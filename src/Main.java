@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
-        employeeBook.addEmployee("Голубев Касьян Михайлович", 1, 10_023);
+        employeeBook.addEmployee("Голубев Касьян Михайлович", 4, 10_023);
         employeeBook.addEmployee("Гурьев Федор Леонидович", 1, 15_023);
         employeeBook.addEmployee("Аксёнов Аввакум Егорович", 1, 20_000);
         employeeBook.removeEmployee(3);
